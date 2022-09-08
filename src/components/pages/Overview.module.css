@@ -1,0 +1,69 @@
+.box {
+  display: flex;
+
+  align-items: center;
+  height: 42%;
+  width: 96%;
+  margin: 0.5em;
+}
+.box1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  width: 96%;
+  margin: 0.5em;
+}
+.box2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24%;
+  width: 96%;
+  margin: 0.5em;
+}
+.box3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 86%;
+  width: 96%;
+  margin: 0.5em;
+}
+.chartcard{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 86%;
+  width: 96%;
+  margin: 0.5em;
+}
+.chart1 {
+  width: 72%;
+  height: 96%;
+}
+.chart2 {
+  width: 100%;
+  height: 80%;
+}
+.activity{
+  box-sizing: border-box;
+  
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  height: 252px;
+  width: 96%;
+  flex-direction: column;
+  overflow-y: auto;
+  margin: 0.5em; 
+}
+.activitycard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  width: 96%;
+  margin: 0.5em;
+}

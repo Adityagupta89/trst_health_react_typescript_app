@@ -13,6 +13,9 @@ const modalStyle = {
   position: "absolute" as "absolute",
   top: "50%",
   left: "50%",
+  height: "30vh",
+  overflow: "scroll",
+  overflowX: "hidden",
   transform: "translate(-50%, -50%)",
   bgcolor: "background.paper",
   border: "2px solid #000",
@@ -216,32 +219,37 @@ const DietModal = () => {
                   required
                 />
               </Grid>
-              <Button
-                variant="contained"
-                sx={{
-                  width: "13%",
-                  height: "56px",
-                  padding: "0px",
-                  marginLeft: "2em",
-                }}
-                onClick={() => setFields((prev) => [...prev, prev.length])}
-              >
-                Add More Food
-              </Button>
-              <Button
-                variant="contained"
-                id={field.toString()}
-                sx={{
-                  width: "12%",
-                  height: "56px",
-                  padding: "0px",
-                  marginLeft: "2em",
-                }}
-                onClick={deleteField}
-                disabled={field.toString() === "0"}
-              >
-                Delete
-              </Button>
+              {field === fields.length - 1 && (
+                <Button
+                  variant="contained"
+                  sx={{
+                    width: "18%",
+                    height: "56px",
+                    padding: "0px",
+                    marginLeft: "2em",
+                    marginTop: ".6em",
+                  }}
+                  onClick={() => setFields((prev) => [...prev, prev.length])}
+                >
+                  Add More Food
+                </Button>
+              )}
+              {field.toString() !== "0" && (
+                <Button
+                  variant="contained"
+                  id={field.toString()}
+                  sx={{
+                    width: "12%",
+                    height: "56px",
+                    padding: "0px",
+                    marginLeft: "2em",
+                  }}
+                  onClick={deleteField}
+                  disabled={field.toString() === "0"}
+                >
+                  Delete
+                </Button>
+              )}
             </Grid>
           ))}
           <Stack
