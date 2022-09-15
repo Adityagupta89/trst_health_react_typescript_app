@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "typeRoots" : ["node_modules/@types", "src/types"],
     "target": "es5",
     "lib": [
       "dom",

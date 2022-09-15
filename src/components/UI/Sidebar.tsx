@@ -29,14 +29,12 @@ const Sidebar: React.FC<Props> = ({ head }) => {
       <Divider />
       <List>
         {head.map((text, index) => (
-          
-            <ListItem key={index} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>{text.icon}</ListItemIcon>
-                <ListItemText primary={text.name} />
-              </ListItemButton>
-            </ListItem>
-          
+          <ListItem key={index} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>{text.icon}</ListItemIcon>
+              <ListItemText primary={text.name} />
+            </ListItemButton>
+          </ListItem>
         ))}
       </List>
     </Drawer>

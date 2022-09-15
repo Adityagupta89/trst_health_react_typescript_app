@@ -24,11 +24,6 @@ const modalStyle = {
   p: 4,
 };
 
-const headingStyle = {
-  margin: "0px .5em",
-  width: "20%",
-};
-
 const textfieldStyle = {
   margin: ".5em",
   width: "100%",
@@ -112,9 +107,8 @@ const DietModal = () => {
     console.log(id);
     setFields((prev) => prev.filter((field) => id !== field));
   };
-  console.log(fields);
   return (
-    <div>
+    <Box>
       <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         open={open}
@@ -268,7 +262,7 @@ const DietModal = () => {
           </Stack>
         </Box>
       </Modal>
-    </div>
+    </Box>
   );
 };
 

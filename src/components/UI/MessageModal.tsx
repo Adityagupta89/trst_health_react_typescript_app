@@ -30,7 +30,7 @@ const MessageModal = () => {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
+    <Box>
       <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         open={open}
@@ -66,7 +66,7 @@ const MessageModal = () => {
           </Stack>
         </Box>
       </Modal>
-    </div>
+    </Box>
   );
 };
 

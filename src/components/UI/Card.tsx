@@ -1,11 +1,12 @@
+import { Box } from "@mui/material";
 import React from "react";
 import classes from "./Card.module.css";
 
 const Card: React.FC<Props> = ({ className, children }) => {
   return (
-    <div className={`${classes.card} ${className}`}>
+    <Box className={`${classes.card} ${className}`}>
       <>{children}</>
-    </div>
+    </Box>
   );
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
-import Tabbar from "../UI/Tabbar";
+import Tabbar from "../components/UI/Tabbar";
 import Avatar from "@mui/material/Avatar";
-import images from "../../images/avatar.jpeg";
+import images from "../images/avatar.jpeg";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 
@@ -32,8 +32,8 @@ const PatientDetails = () => {
             Male 37 Years
           </Typography>
         </Box>
-        <div
-          style={{
+        <Box
+          sx={{
             display: "flex",
             width: "80%",
             alignItems: "flex-end",
@@ -51,7 +51,7 @@ const PatientDetails = () => {
           >
             View Patient Profile
           </Typography>
-        </div>
+        </Box>
       </Box>
       <Tabbar />
     </Box>

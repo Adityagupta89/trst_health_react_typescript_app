@@ -1,0 +1,37 @@
+.lunchbox {
+  display: flex;
+  width: 100%;
+  height: 48%;
+  justify-content: space-around;
+  overflow-y: scroll;
+  flex-direction: column;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.lunchbox::-webkit-scrollbar {
+  display: none;
+}
+
+.meal {
+  width: 100%;
+  height: 98%;
+  background-color: #dadada;
+  display: flex;
+  flex-direction: column;
+  padding: 0.2em;
+}
+
+.nextmeal{
+  display:flex;
+  width: 100%;
+  height: 48%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.img{
+  border: 1px solid black;
+  border-radius: 50px;
+  margin-left: 1rem;
+  overflow: hidden;
+}

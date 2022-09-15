@@ -1,40 +1,19 @@
 import React from "react";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
-
-const ActivityCard: React.FC<Props> = ({
-  title,
-  target,
-  achieved,
-  calories,
-  images,
-}) => {
+import classes from "./ActivityCard.module.css";
+const ActivityCard: React.FC<Props> = ({ data, images }) => {
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          width: "100%",
-          alignItems: "center",
-          gap: "2em",
-        }}
-      >
-        <Box sx={{ width: "40%", height: "100%", padding: ".5em" }}>
-          <img src={images} alt="not found" width="100%" height="132px" />
+      <Box className={classes.activitycard}>
+        <Box className={classes.img}>
+          <img src={images} alt="not found" width="100%" height="120px" />
         </Box>
-        <Box
-          sx={{
-            height: "100%",
-            display: "flex",
-            gap: "1em",
-            flexDirection: "column",
-            alignItem: "center",
-          }}
-        >
-          <Typography>{title}</Typography>
-          <Typography>Target - {target}</Typography>
-          <Typography>Achieved - {achieved}</Typography>
-          <Typography>Calories Burnt - {calories}</Typography>
+        <Box className={classes.text}>
+          <Typography>{data.title}</Typography>
+          <Typography>Target - {data.target}</Typography>
+          <Typography>Achieved - {data.achieved}</Typography>
+          <Typography>Calories Burnt - {data.calories}</Typography>
         </Box>
       </Box>
     </>
@@ -42,10 +21,12 @@ const ActivityCard: React.FC<Props> = ({
 };
 
 interface Props {
-  title: string;
-  target: string;
-  achieved: string;
-  calories: string;
+  data: {
+    title: string;
+    target: string;
+    achieved: string;
+    calories: string;
+  };
   images: any;
 }
 

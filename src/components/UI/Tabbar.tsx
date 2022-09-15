@@ -3,7 +3,8 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Overview from "../pages/Overview";
+import Overview from "../../pages/Overview";
+import TrackerDiet from "../../pages/TrackerDiet";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -70,7 +71,7 @@ const Tabbar = () => {
         Vitals
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Trackers
+        <TrackerDiet />
       </TabPanel>
       <TabPanel value={value} index={3}>
         Care Program

@@ -10,88 +10,15 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useState, useCallback } from "react";
+import { Box } from "@mui/material";
 
-const dataChart: any = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
-
-const GlucoseChart: React.FC<Props> = ({ className }) => {
+const GlucoseChart: React.FC<Props> = ({ className, dataChart }) => {
   const [opacity, setOpacity] = useState({
     uv: 1,
     pv: 1,
   });
   const [data, setData] = useState(dataChart);
-  const labelHandler = (e) => {
-    setData((prev) =>
-      dataChart.map((data, index) => {
-        if (e.value === "pv") {
-          if (prev[index].pv === undefined) {
-            return {
-              ...prev[index],
-              pv: data.pv,
-            };
-          } else
-            return {
-              ...prev[index],
-              pv: undefined,
-            };
-        } else {
-          if (prev[index].uv === undefined)
-            return {
-              ...prev[index],
-              uv: data.uv,
-            };
-          else {
-            return {
-              ...prev[index],
-              uv: undefined,
-            };
-          }
-        }
-      })
-    );
-  };
+
   const handleMouseEnter = useCallback(
     (o) => {
       const { dataKey } = o;
@@ -110,7 +37,7 @@ const GlucoseChart: React.FC<Props> = ({ className }) => {
   );
 
   return (
-    <div className={className}>
+    <Box className={className}>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           width={500}
@@ -126,7 +53,6 @@ const GlucoseChart: React.FC<Props> = ({ className }) => {
           <Legend
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            onClick={labelHandler}
           />
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
@@ -148,12 +74,13 @@ const GlucoseChart: React.FC<Props> = ({ className }) => {
           />
         </LineChart>
       </ResponsiveContainer>
-    </div>
+    </Box>
   );
 };
 
 interface Props {
   className?: string;
+  dataChart: object[];
 }
 
 export default GlucoseChart;
